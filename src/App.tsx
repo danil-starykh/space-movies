@@ -1,17 +1,12 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import Header from './components/Header';
-import { setupStore } from './store';
+import MainLayout from './components/MainLayout/MainLayout';
+import MainContent from './components/MainContent/MainContent';
 
-const store = setupStore();
-
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <Header/>
-      </Provider>
-    </div>
+    <MainLayout>
+      <MainContent/>
+    </MainLayout>
   );
 }
 
