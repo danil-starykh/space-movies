@@ -6,21 +6,31 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useDebounce } from '../../hooks/useDebounce';
 import { useAppDispatch } from '../../hooks/useTypedReduxHooks';
 import { fetchMovies, searchMovies } from '../../store/reducers/ActionCreators';
+import { useLocation } from 'react-router-dom';
 
 const settings = ['Profile', 'Logout'];
 
 const Header: React.FC = () => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [showSearch, setShowSearch] = useState<boolean>(true);
   const debounced = useDebounce(searchValue);
   const dispatch = useAppDispatch();
-  
+  const location = useLocation();
   
   useEffect(() => {
     if (searchValue.length && debounced.length > 1) {
       dispatch(searchMovies({limit: 20, page: 1, searchValue: debounced}));
     }
-  }, [debounced])
+  }, [debounced]);
+
+  useEffect(() => {
+    if (location.pathname !== '/movies-list') {
+      setShowSearch(false);
+    } else {
+      setShowSearch(true);
+    }
+  }, [location]);
   
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -49,7 +59,7 @@ const Header: React.FC = () => {
               variant="h6"
               noWrap
               component="a"
-              href="/"
+              href="/movies-list"
               sx={{
                 flexGrow: 1,
                 mr: 2,
@@ -63,16 +73,18 @@ const Header: React.FC = () => {
             </Typography>
           </Box>
           <Box sx={{ display: 'flex' }} >
-            <Search sx={{ mr: '24px', minWidth: '100px' }}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search movie…"
-                inputProps={{ 'aria-label': 'search' }}
-                onChange={(e) => handleSearch(e)}
-              />
-            </Search>
+            { showSearch &&
+              <Search sx={{ mr: '24px', minWidth: '100px' }}>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search movie…"
+                  inputProps={{ 'aria-label': 'search' }}
+                  onChange={(e) => handleSearch(e)}
+                />
+              </Search>
+            }
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar 
