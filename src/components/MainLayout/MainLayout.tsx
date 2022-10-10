@@ -14,7 +14,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <Box sx={{ bgcolor: "secondary.dark", minHeight: "100vh" }}>
       <Header/>
-        <Box flex={1} sx={{ py: '16px', minHeight: 'calc(100vh - 200px)' }}>
+        <Box flex={1} sx={{ py: '16px', minHeight: 'calc(100vh - 170px)' }}>
           <Container >
             { children }
           </Container>

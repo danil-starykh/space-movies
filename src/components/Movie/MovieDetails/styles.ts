@@ -88,6 +88,9 @@ export const classes = {
     color: 'text.primary', 
     pl: '5px' 
   },
+  movieInfoDescriptionWrapper: { 
+    mt: '20px' 
+  },
   sectionWrapper: { 
     mb: '20px' 
   },

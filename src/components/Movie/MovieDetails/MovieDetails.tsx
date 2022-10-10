@@ -131,10 +131,12 @@ const MovieDetails: FC = () => {
                 <Typography component="span" variant="body1" sx={classes.movieInfoItem}>Stars: </Typography>
                 <Typography component="span" variant="body1" sx={classes.movieInfoItemText}>{movieCast?.join(' - ')}</Typography>
               </Box>}
-              {movie.description_full && <Box sx={{ mt: '20px' }}>
+              {movie.description_full && 
+                <Box sx={ classes.movieInfoDescriptionWrapper }>
                 <Typography component="span" variant="body1" sx={classes.movieInfoItem}>Description: </Typography>
                 <Typography component="span" variant="body1" sx={classes.movieInfoItemText}>{movie.description_full}</Typography>
-              </Box>}
+                </Box>
+              }
             </Box>
           </Box>
           {movieScreenshots &&

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Container, Grid, Link, Typography, Paper } from '@mui/material';
-import { Colors } from '../../styles/Styles';
+import { Box, Container, Link, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer: React.FC = () => {
@@ -22,7 +21,7 @@ const Footer: React.FC = () => {
             flexGrow: 1,
             justifyContent: "center",
             display: "flex",
-            my: 1
+            mb: '5px'
           }}
         >
           <Link href="https://github.com/oldman-star">
@@ -34,10 +33,9 @@ const Footer: React.FC = () => {
             flexGrow: 1,
             justifyContent: "center",
             display: "flex",
-            mb: 2,
           }}
         >
-          <Typography fontWeight={500} fontSize="medium" color="primary">
+          <Typography fontWeight={400} fontSize="0.9rem" color="primary">
             Copyright ©2022. Danil Starykh
           </Typography>
         </Box>
