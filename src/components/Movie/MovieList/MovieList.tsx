@@ -6,14 +6,14 @@ import { fetchMovies } from '../../../store/reducers/ActionCreators';
 import RingLoader from "react-spinners/RingLoader";
 import { Colors } from '../../../styles/Styles';
 import { useCalculateCountOfPages } from '../../../hooks/useCalculateCountOfPages';
-import { IMovie, IMovieList, IMoviesListItem } from '../../../models/movie.model';
+import { IMoviesListItem } from '../../../models/movie.model';
 
 const MovieList: React.FC = () => {
       const dispatch = useAppDispatch();
       const { movies, isLoading, totalMoviesCount } = useAppSelector(state => state.moviesReducer);
       const [moviesData, setMoviesData] = useState<IMoviesListItem[]>([]);
       const [page, setPage] = useState<number>(1);
-      const [pageLimit, setPageLimit] = useState<number>(20);
+      const [pageLimit] = useState<number>(20);
       const countOfPages = useCalculateCountOfPages(totalMoviesCount, pageLimit);
       
       useEffect(() => {

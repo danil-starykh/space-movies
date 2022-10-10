@@ -70,6 +70,7 @@ export const ScreenshotsSlider: FC<IScreenshotsSliderProps> = ({ screenshots }) 
         {screenshots.map((screenshot : IScreenshot, index: number) => (
             <Box
               component="img"
+              sx={{ height: '300px' }}
               key={index}
               src={`${screenshot.screenshotUrl}`}
               srcSet={`${screenshot.screenshotUrl}`}
