@@ -72,7 +72,15 @@ const MovieDetails: FC = () => {
               <Typography variant="h6" sx={classes.backBtnText}>Back</Typography>
             </Box>
           </Box>
-          <Box component="div" sx={classes.movieInfoSection}>
+          <Box 
+            component="div" 
+            sx={classes.movieInfoSection} 
+            style={{
+              backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8) ), url(${movie.background_image_original})`,
+              backgroundRepeat: 'no-repeat', 
+              backgroundSize: 'cover',
+            }}
+          >
             {!imageBroken
               ? <Box
                 component="img"

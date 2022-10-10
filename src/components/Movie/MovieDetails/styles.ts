@@ -28,14 +28,15 @@ export const classes = {
   movieInfoSection: { 
     display: 'flex', 
     width: '100%', 
-    mb: '20px' 
+    mb: '20px', 
+    borderRadius: '6px'
   },
   movieImageWrapper: { 
     maxHeight: '500px', 
-    mr: '30px' 
+    // mr: '30px' 
   },
   brokenMovieImageWrapper: {
-    mr: '30px',
+    // mr: '30px',
     height: '500px',
     minWidth: '333px',
     display: "flex",
@@ -50,21 +51,21 @@ export const classes = {
     fontSize: "large"
   },
   movieInfoWrapper: { 
-    flexGrow: '1' 
+    flexGrow: '1',
+    padding: "20px"
   },
   movieInfoTitleWrapper: { 
     display: 'flex', 
     justifyContent: 'space-between', 
     alignItems: 'center', 
-    mb: '20px' 
+    mb: '20px',
   },
   movieInfoTitle: { 
     color: 'text.primary' 
   },
   movieInfoImdbImage: { 
     height: '30px', 
-    cursor: 'pointer', 
-    ml: '20px' 
+    cursor: 'pointer'
   },
   movieInfoRating: { 
     display: 'flex', 

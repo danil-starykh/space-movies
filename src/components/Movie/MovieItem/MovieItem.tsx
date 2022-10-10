@@ -9,7 +9,8 @@ import { Link as RouterLink } from 'react-router-dom';
 const classes = {
   card : {
     bgcolor: 'secondary.main', 
-    height: '100%' 
+    height: '100%',
+    borderRadius: '6px'
   }, 
   default_card_media: {
     height: '430px',
