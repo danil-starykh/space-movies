@@ -61,7 +61,8 @@ export const classes = {
     mb: '20px',
   },
   movieInfoTitle: { 
-    color: 'text.primary' 
+    color: 'text.primary',
+    fontWeight: '600',
   },
   movieInfoImdbImage: { 
     height: '30px', 
