@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { RingLoader } from 'react-spinners';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useTypedReduxHooks';
 import { IMovie, IMoviesListItem } from '../../../models/movie.model';
@@ -33,6 +33,11 @@ const MovieDetails: FC = () => {
   const [movieCast, setMovieCast] = useState<string[]>([]);
   const { movieId } = useParams<{ movieId: string }>();
   const [imageBroken, setImageBroken] = useState<boolean>(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     dispatch(getMovieDetails(movieId as string));
