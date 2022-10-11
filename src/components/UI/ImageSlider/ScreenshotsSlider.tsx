@@ -75,7 +75,6 @@ export const ScreenshotsSlider: FC<IScreenshotsSliderProps> = ({ screenshots }) 
               src={`${screenshot.screenshotUrl}`}
               srcSet={`${screenshot.screenshotUrl}`}
               alt={screenshot.altValue}
-              loading="lazy"
             />
         ))}
       </Slider>
