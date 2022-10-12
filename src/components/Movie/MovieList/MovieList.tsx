@@ -20,6 +20,8 @@ const MovieList: React.FC = () => {
             if (!isLoading && movies) {
                   setMoviesData(movies);
             }
+            console.log('movies', movies);
+            
       }, [movies]);
 
       useEffect(() => {
@@ -57,8 +59,8 @@ const MovieList: React.FC = () => {
                               }
                         </Box>
                   }
-                  {!isLoading && !movies &&
-                        <Box>
+                  {!isLoading && !movies.length &&
+                        <Box sx={{ mt: '40px' }}>
                               <Typography variant="h5" textAlign="center" color="primary.dark">Movies not found...</Typography>
                         </Box>
                         
